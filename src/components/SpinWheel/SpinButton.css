@@ -1,0 +1,60 @@
+.spin-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+  border: none;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  color: var(--text-primary);
+  box-shadow: 
+    0 4px 20px rgba(0, 102, 255, 0.5),
+    0 0 40px rgba(0, 102, 255, 0.4);
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1.2;
+  padding: 20px;
+}
+
+.spin-button:hover:not(:disabled) {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 
+    0 6px 30px rgba(0, 102, 255, 0.7),
+    0 0 60px rgba(0, 102, 255, 0.6);
+}
+
+.spin-button:active:not(:disabled) {
+  transform: translate(-50%, -50%) scale(0.98);
+}
+
+.spin-button:disabled {
+  background: #616161;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .spin-button {
+    width: 140px;
+    height: 140px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spin-button {
+    width: 120px;
+    height: 120px;
+    font-size: 16px;
+    padding: 15px;
+  }
+}

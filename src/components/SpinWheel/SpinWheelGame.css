@@ -1,0 +1,120 @@
+.game-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--background-dark) 0%, var(--primary-dark) 100%);
+  padding-bottom: 40px;
+}
+
+.instructions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 32px 0;
+  padding: 0 20px;
+}
+
+.instruction-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-dark);
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+}
+
+.step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--primary-blue);
+  color: var(--text-primary);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.step-text {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.wheel-section {
+  position: relative;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.prizes-legend {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.prizes-legend h3 {
+  color: var(--primary-blue);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.prizes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.prize-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-dark);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.prize-icon {
+  font-size: 24px;
+}
+
+.prize-name {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .instructions {
+    gap: 16px;
+  }
+  
+  .instruction-step {
+    padding: 10px 16px;
+  }
+  
+  .step-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .prizes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .prizes-legend h3 {
+    font-size: 20px;
+  }
+}

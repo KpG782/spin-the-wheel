@@ -1,0 +1,75 @@
+.custom-button {
+  border: none;
+  border-radius: 12px;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-height: 56px;
+}
+
+.custom-button.primary {
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+  color: var(--text-primary);
+  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.5);
+}
+
+.custom-button.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 102, 255, 0.7);
+}
+
+.custom-button.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.custom-button.fast {
+  background: linear-gradient(135deg, #FF5252, #FF8A80);
+  color: var(--text-primary);
+  border: 3px solid #FF5252;
+}
+
+.custom-button.fast:hover:not(:disabled) {
+  box-shadow: 0 0 30px rgba(255, 82, 82, 0.6);
+  transform: scale(1.03);
+}
+
+.custom-button.slow {
+  background: linear-gradient(135deg, #2196F3, #64B5F6);
+  color: var(--text-primary);
+  border: 3px solid #2196F3;
+}
+
+.custom-button.slow:hover:not(:disabled) {
+  box-shadow: 0 0 30px rgba(33, 150, 243, 0.6);
+  transform: scale(1.03);
+}
+
+.custom-button.secondary {
+  background: var(--surface-dark);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.custom-button.secondary:hover:not(:disabled) {
+  background: var(--card-background);
+  border-color: var(--primary-blue);
+}
+
+.custom-button:disabled {
+  background: #616161;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+  .custom-button {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+}

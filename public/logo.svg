@@ -1,0 +1,12 @@
+<svg width="400" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Waveform icon integrated with P -->
+  <g>
+    <path d="M15 60 L25 40 L35 75 L45 25 L55 60 L60 60" stroke="#0066FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="20" cy="60" r="3" fill="#0066FF" />
+    <circle cx="30" cy="60" r="3" fill="#0066FF" />
+    <circle cx="50" cy="60" r="3" fill="#0066FF" />
+  </g>
+  
+  <!-- Pace text - bold, rounded letters -->
+  <text x="75" y="85" font-family="Plus Jakarta Sans, Fredoka, Quicksand, Arial, sans-serif" font-size="80" font-weight="800" fill="#0066FF" letter-spacing="-4">Pace</text>
+</svg>

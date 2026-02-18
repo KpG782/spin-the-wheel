@@ -1,0 +1,87 @@
+:root {
+  /* Core Identity - PaceBeats Blue Brand Colors */
+  --primary-blue: #0066FF;
+  --primary-blue-light: #338FFF;
+  --primary-blue-dark: #0052CC;
+  --primary-dark: #1A1A1A;
+  --background-dark: #0A0E1A;
+  --surface-dark: #141821;
+  --accent-blue: #0080FF;
+  --secondary-blue: #4D9FFF;
+  
+  /* Game-Specific Colors */
+  --win-blue: #0066FF;
+  --almost-yellow: #FFC107;
+  --suspense-red: #FF5252;
+  --music-pulse: #0066FF;
+  --neutral-gray: #B0B0B0;
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --text-muted: #707070;
+  --text-dark: #0A0E1A;
+  
+  /* UI Component Colors */
+  --card-background: #1C2331;
+  --border-color: #2A3441;
+  --overlay-color: rgba(10, 14, 26, 0.9);
+  --shadow-glow: rgba(0, 102, 255, 0.3);
+  --shadow-glow-blue: rgba(0, 102, 255, 0.4);
+
+  /* Font */
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(180deg, var(--background-dark) 0%, #0D1219 50%, var(--primary-dark) 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Prevent text selection on interactive elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Touch-friendly elements */
+.touch-target {
+  min-height: 56px;
+  min-width: 56px;
+  -webkit-tap-highlight-color: transparent;
+}

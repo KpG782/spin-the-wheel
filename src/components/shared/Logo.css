@@ -1,0 +1,65 @@
+.pacebeats-logo {
+  display: inline-block;
+  user-select: none;
+  line-height: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.3));
+  transition: all 0.3s ease;
+}
+
+.pacebeats-logo:hover .logo-image {
+  filter: drop-shadow(0 0 16px rgba(0, 102, 255, 0.6));
+  transform: scale(1.02);
+}
+
+/* Responsive sizing */
+.pacebeats-logo.small {
+  max-width: 200px;
+}
+
+.pacebeats-logo.medium {
+  max-width: 350px;
+  width: 90vw;
+}
+
+.pacebeats-logo.large {
+  max-width: 450px;
+  width: 95vw;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .pacebeats-logo.small {
+    max-width: 150px;
+  }
+  
+  .pacebeats-logo.medium {
+    max-width: 280px;
+  }
+  
+  .pacebeats-logo.large {
+    max-width: 350px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .pacebeats-logo.small {
+    max-width: 180px;
+  }
+  
+  .pacebeats-logo.medium {
+    max-width: 320px;
+  }
+  
+  .pacebeats-logo.large {
+    max-width: 400px;
+  }
+}

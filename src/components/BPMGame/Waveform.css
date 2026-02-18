@@ -1,0 +1,31 @@
+.waveform-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  height: 100px;
+  padding: 20px;
+}
+
+.waveform-bar {
+  width: 8px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--primary-blue), var(--accent-blue));
+  border-radius: 4px;
+  transition: height 0.1s ease;
+}
+
+.waveform-bar.playing {
+  animation: waveformPulse 0.8s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+  .waveform-container {
+    height: 80px;
+    gap: 4px;
+  }
+  
+  .waveform-bar {
+    width: 6px;
+  }
+}

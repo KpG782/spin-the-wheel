@@ -1,0 +1,54 @@
+.game-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  width: 100%;
+}
+
+.logo-container {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+.game-logo {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--primary-blue);
+  text-shadow: 0 0 20px var(--shadow-glow-blue);
+  margin: 0;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.game-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-shadow: 0 0 20px var(--shadow-glow-blue);
+  letter-spacing: -1px;
+  margin: 16px 0 8px;
+}
+
+.game-tagline {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 8px 0 0;
+}
+
+@media (max-width: 480px) {
+  .game-logo {
+    font-size: 36px;
+  }
+  
+  .game-title {
+    font-size: 28px;
+  }
+  
+  .game-tagline {
+    font-size: 16px;
+  }
+}
