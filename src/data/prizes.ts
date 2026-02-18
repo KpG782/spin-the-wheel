@@ -1,4 +1,4 @@
-import { Prize } from '../../types/game.types';
+import { Prize } from '../types/game.types';
 
 export const WHEEL_PRIZES: Prize[] = [
   {
