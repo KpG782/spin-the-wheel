@@ -2,21 +2,33 @@ import { Prize } from '../types/game.types';
 
 // Weighted Random Selection Algorithm
 export function selectPrize(sections: Prize[]): Prize {
+  // Validate sections
+  if (!sections || sections.length === 0) {
+    throw new Error('No prize sections provided');
+  }
+
   // Calculate total probability
   const totalProbability = sections.reduce((sum, s) => sum + s.probability, 0);
   
-  // Generate random number
-  let random = Math.random() * totalProbability;
+  // Validate probability sum
+  if (Math.abs(totalProbability - 1.0) > 0.001) {
+    console.warn('⚠️ Total probability is not 1.0:', totalProbability);
+  }
+  
+  // Generate random number between 0 and total probability
+  const random = Math.random() * totalProbability;
+  let cumulative = 0;
   
   // Select prize based on weighted probability
   for (const section of sections) {
-    random -= section.probability;
-    if (random <= 0) {
+    cumulative += section.probability;
+    if (random < cumulative) {
       return section;
     }
   }
   
-  // Fallback to last section (shouldn't happen)
+  // Fallback to last section (shouldn't happen with proper probabilities)
+  console.warn('⚠️ Fallback to last prize triggered');
   return sections[sections.length - 1];
 }
 

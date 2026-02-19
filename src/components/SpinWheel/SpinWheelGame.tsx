@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from '../shared/Header';
 import { ResultModal } from '../shared/ResultModal';
 import { Wheel } from './Wheel';
@@ -14,6 +14,14 @@ export const SpinWheelGame: React.FC = () => {
   const [rotation, setRotation] = useState(0);
   const [selectedPrize, setSelectedPrize] = useState<Prize | null>(null);
   const [showResult, setShowResult] = useState(false);
+
+  // Log probability info in development
+  useEffect(() => {
+    if (import.meta.env.DEV) {
+      console.log('🎡 Spin Wheel loaded with RIGGED probabilities');
+      console.log('💡 Test it with: testProbability(200)');
+    }
+  }, []);
 
   const handleSpin = () => {
     if (isSpinning) return;

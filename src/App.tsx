@@ -5,6 +5,11 @@ import { BPMGame } from './components/BPMGame/BPMGame';
 import './styles/globals.css';
 import './styles/animations.css';
 
+// Import test utility in development
+if (import.meta.env.DEV) {
+  import('./utils/testProbability');
+}
+
 function App() {
   return (
     <Router>
