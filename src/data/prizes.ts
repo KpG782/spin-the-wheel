@@ -6,7 +6,7 @@ export const WHEEL_PRIZES: Prize[] = [
     name: '₱50 GCash',
     color: '#FF5252',
     probability: 0.01,        // 1% - Backend: Very rare (2 out of 200)
-    angle: 60,                 // UI: Shows as balanced segment
+    angle: 60,                // UI: Balanced segment (looks fair)
     icon: '💵',
     type: 'instant'
   },
@@ -15,7 +15,7 @@ export const WHEEL_PRIZES: Prize[] = [
     name: 'Spotify Premium Raffle',
     color: '#4D9FFF',
     probability: 0.02,        // 2% - Backend: Very rare (4 out of 200)
-    angle: 60,                 // UI: Shows as balanced segment
+    angle: 60,                // UI: Balanced segment (looks fair)
     icon: '🎵',
     type: 'raffle'
   },
@@ -24,7 +24,7 @@ export const WHEEL_PRIZES: Prize[] = [
     name: 'Extra Raffle Entry',
     color: '#0066FF',
     probability: 0.15,        // 15% - Backend: Uncommon (30 out of 200)
-    angle: 60,                 // UI: Shows as balanced segment
+    angle: 60,                // UI: Balanced segment (looks fair)
     icon: '🎟️',
     type: 'raffle'
   },
@@ -33,7 +33,7 @@ export const WHEEL_PRIZES: Prize[] = [
     name: 'Candy',
     color: '#B0B0B0',
     probability: 0.40,        // 40% - Backend: Most common (80 out of 200)
-    angle: 60,                 // UI: Shows as balanced segment
+    angle: 60,                // UI: Balanced segment (looks fair)
     icon: '🍬',
     type: 'token'
   },
@@ -42,7 +42,7 @@ export const WHEEL_PRIZES: Prize[] = [
     name: 'Sticker',
     color: '#338FFF',
     probability: 0.32,        // 32% - Backend: Common (64 out of 200)
-    angle: 60,                 // UI: Shows as balanced segment
+    angle: 60,                // UI: Balanced segment (looks fair)
     icon: '⭐',
     type: 'token'
   },
@@ -51,7 +51,7 @@ export const WHEEL_PRIZES: Prize[] = [
     name: 'Try Again',
     color: '#FFC107',
     probability: 0.10,        // 10% - Backend: Regular (20 out of 200)
-    angle: 60,                 // UI: Shows as balanced segment
+    angle: 60,                // UI: Balanced segment (looks fair)
     icon: '🔄',
     type: 'token'
   }

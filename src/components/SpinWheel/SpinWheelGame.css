@@ -46,6 +46,10 @@
   position: relative;
   margin: 40px auto;
   max-width: 600px;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .prizes-legend {
@@ -73,10 +77,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--surface-dark);
   padding: 12px 16px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
+  transition: transform 0.2s ease;
+}
+
+.prize-item:hover {
+  transform: translateX(4px);
 }
 
 .prize-icon {
@@ -101,6 +109,10 @@
   .step-text {
     font-size: 13px;
   }
+  
+  .wheel-section {
+    min-height: 450px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -116,5 +128,10 @@
   
   .prizes-legend h3 {
     font-size: 20px;
+  }
+  
+  .wheel-section {
+    min-height: 380px;
+    margin: 20px auto;
   }
 }

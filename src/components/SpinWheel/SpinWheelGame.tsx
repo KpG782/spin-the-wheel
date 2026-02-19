@@ -20,7 +20,10 @@ export const SpinWheelGame: React.FC = () => {
 
     // Select prize based on weighted probability
     const prize = selectPrize(WHEEL_PRIZES);
-    const finalRotation = rotation + calculateRotation(prize, WHEEL_PRIZES);
+    console.log('🎰 Selected Prize:', prize.name, `(${(prize.probability * 100).toFixed(1)}% chance)`);
+    
+    const additionalRotation = calculateRotation(prize, WHEEL_PRIZES, rotation);
+    const finalRotation = rotation + additionalRotation;
 
     setIsSpinning(true);
     setRotation(finalRotation);
@@ -102,7 +105,14 @@ export const SpinWheelGame: React.FC = () => {
           <h3>Prizes:</h3>
           <div className="prizes-grid">
             {WHEEL_PRIZES.map(prize => (
-              <div key={prize.id} className="prize-item">
+              <div 
+                key={prize.id} 
+                className="prize-item"
+                style={{
+                  borderLeft: `4px solid ${prize.color}`,
+                  background: `linear-gradient(90deg, ${prize.color}15, transparent)`
+                }}
+              >
                 <span className="prize-icon">{prize.icon}</span>
                 <span className="prize-name">{prize.name}</span>
               </div>

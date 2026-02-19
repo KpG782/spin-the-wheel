@@ -10,13 +10,20 @@ interface WheelProps {
 
 export const Wheel: React.FC<WheelProps> = ({ sections, rotation, isSpinning }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
+    // Set canvas size based on container size
+    const size = Math.min(container.clientWidth, container.clientHeight);
+    canvas.width = size;
+    canvas.height = size;
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
@@ -25,7 +32,9 @@ export const Wheel: React.FC<WheelProps> = ({ sections, rotation, isSpinning }) 
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    let startAngle = 0;
+    // Start drawing from top (12 o'clock) instead of right (3 o'clock)
+    // Subtract 90 degrees (π/2 radians) to align with pointer
+    let startAngle = -Math.PI / 2;
 
     // Draw wheel sections
     sections.forEach((section) => {
@@ -88,9 +97,10 @@ export const Wheel: React.FC<WheelProps> = ({ sections, rotation, isSpinning }) 
       startAngle += angleInRadians;
     });
 
-    // Draw center circle
+    // Draw center circle (scaled based on canvas size)
+    const centerCircleRadius = radius * 0.1; // 10% of wheel radius
     ctx.beginPath();
-    ctx.arc(centerX, centerY, 50, 0, 2 * Math.PI);
+    ctx.arc(centerX, centerY, centerCircleRadius, 0, 2 * Math.PI);
     ctx.fillStyle = '#0A0E1A';
     ctx.fill();
     ctx.strokeStyle = '#0066FF';
@@ -103,6 +113,7 @@ export const Wheel: React.FC<WheelProps> = ({ sections, rotation, isSpinning }) 
     <div className="wheel-wrapper">
       <div className="wheel-pointer">▼</div>
       <div 
+        ref={containerRef}
         className={`wheel-container ${isSpinning ? 'spinning' : ''}`}
         style={{
           transform: `rotate(${rotation}deg)`,
@@ -110,9 +121,7 @@ export const Wheel: React.FC<WheelProps> = ({ sections, rotation, isSpinning }) 
         }}
       >
         <canvas 
-          ref={canvasRef} 
-          width={500} 
-          height={500}
+          ref={canvasRef}
           className="wheel-canvas no-select"
         />
       </div>
